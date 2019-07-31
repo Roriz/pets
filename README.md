@@ -1,3 +1,13 @@
+## Build
+```shell
+docker build . -t pets
+```
+
+## Run
+```shell
+docker run -p 3000:80 pets
+```
+
 # Desafio de código Backend Ruby
 
 O objetivo deste exercício é analisar sua familiaridade com a plataforma Rails,
