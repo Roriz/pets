@@ -17,6 +17,10 @@ module Pets
   class Application < Rails::Application
     config.load_defaults 6.0
 
+    config.active_record.schema_format = :sql
+
+    config.hosts << /.*/
+
     config.api_only = true
   end
 end
