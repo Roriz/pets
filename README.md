@@ -5,7 +5,7 @@ docker build . -t pets
 
 ## Run
 ```shell
-docker run -p 3000:80 pets
+sudo docker run -p 3000:80 --network dev_default -v $PWD:/app_default pets
 ```
 
 # Desafio de código Backend Ruby
