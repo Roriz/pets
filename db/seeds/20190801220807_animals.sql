@@ -7,4 +7,5 @@ VALUES
   (5, 'Flora', 103.99, 3, 5, NOW(), NOW()),
   (6, 'Dino', 177.99, 4, 6, NOW(), NOW()),
   (7, 'Lassie', 407.99, 5, 7, NOW(), NOW()),
-  (8, 'John Jr', 320, 6, 8, NOW(), NOW());
+  (8, 'John Jr', 320, 6, 8, NOW(), NOW()),
+  (9, 'Maria mimi', 110, 6, 8, NOW(), NOW());
