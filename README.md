@@ -1,11 +1,17 @@
-## Build
-```shell
-docker build . -t pets
-```
 
 ## Run
 ```shell
-sudo docker run -p 3000:80 --network dev_default -v $PWD:/app_default pets
+docker-compose up
+```
+
+## Run any command
+```shell
+docker exec -it pets_api_1 command
+```
+
+## Create a new secret
+```shell
+docker exec -it pets_api_1 rake secret
 ```
 
 # Desafio de código Backend Ruby

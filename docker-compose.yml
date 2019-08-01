@@ -1,0 +1,23 @@
+version: '3.2'
+services:
+  api:
+    build: .
+    restart: on-failure
+    ports:
+      - "3000:80"
+    depends_on:
+      - postgres
+    volumes:
+      - ./:/app
+
+  postgres:
+    image: postgres:latest
+    restart: on-failure
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    volumes:
+      - postgresql:/var/lib/postgresql/data
+  
+volumes:
+  postgresql:
