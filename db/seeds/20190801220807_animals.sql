@@ -10,3 +10,4 @@ VALUES
   (8, 'John Jr', 320, 6, 8, NOW(), NOW()),
   (9, 'Maria mimi', 810, 6, 8, NOW(), NOW());
 
+ALTER SEQUENCE animals_id_seq START with 10 RESTART;

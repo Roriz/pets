@@ -9,3 +9,4 @@ VALUES
   (7, 'Elvis Presley', '555555555', '2008-08-17', NOW(), NOW()),
   (8, 'Radamés Roriz', '555555555', '1991-11-01', NOW(), NOW());
 
+ALTER SEQUENCE people_id_seq START with 9 RESTART;
