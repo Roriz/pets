@@ -48,14 +48,4 @@ RSpec.describe Person do
       expect(person.total_cost_month).to eq(200)
     end
   end
-
-  context '#total_cost_quarter' do
-    it 'sum all month_cost from animals and multiple to 3' do
-      person = FactoryBot.create(:person)
-      FactoryBot.create(:animal, month_cost: 100, person: person)
-      FactoryBot.create(:animal, month_cost: 100, person: person)
-
-      expect(person.total_cost_quarter).to eq(600)
-    end
-  end
 end

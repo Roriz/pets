@@ -91,11 +91,19 @@ Person.all.order('total_month_cost desc')
 ### Levando em consideração o custo mensal, qual será o custo de 3 meses de cada pessoa?
 
 ```ruby
-Person.all.joins(:animals).group(:id).select('people.*, sum(month_cost) * 3 as total_cost_quarter')
+Person.all.joins(:animals).group(:id).select('people.*, sum(month_cost) * 3 as total_cost_quarter').as_json
 ```
 or
 
 ```ruby
+Class Person
+  ...
+  def total_cost_quarter
+    total_cost_month * 3
+  end
+  ...
+end
+
 Person.all.as_json(methods: :total_cost_quarter)
 ```
 
