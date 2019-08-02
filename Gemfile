@@ -16,6 +16,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8'
 end
 
+group :test do
+  gem 'simplecov', '~> 0.17'
+end
+
 group :development do
   gem 'listen', '~> 3.1'
   gem 'rubocop', '~> 0.74'
