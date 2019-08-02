@@ -1,9 +1,11 @@
 # Stack
+```
 ruby: 2.6
 rails: 6.0.0.rc2
 postgres: 11
 docker: 19.03
 docker-compose: 1.24
+```
 
 ## First run
 ```shell
