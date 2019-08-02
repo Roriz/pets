@@ -8,7 +8,10 @@ class Animal < ApplicationRecord
   LIMIT_PER_PERSON = 1000
   FORBIDDEN_CHAR = 'a'
 
-  validates :card_number, presence: true
+  validates :name, presence: true
+  validates :month_cost, presence: true
+  validates :kind, presence: true
+  validates :person_id, presence: true
   validate :can_have_swallow?
   validate :can_have_cat?
   validate :person_can_add_a_animal?, on: :create

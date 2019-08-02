@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '~> 2.6'
 
@@ -13,6 +12,8 @@ gem 'rack-cors', '~> 1.0'
 
 group :development, :test do
   gem 'byebug', '~> 11.0'
+  gem 'factory_bot_rails', '~> 5.0'
+  gem 'rspec-rails', '~> 3.8'
 end
 
 group :development do
