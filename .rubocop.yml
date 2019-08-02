@@ -2,6 +2,7 @@ AllCops:
   Exclude:
     - 'config/environments/*'
     - 'config/initializers/*'
+    - 'specs/*/**'
 Metrics/LineLength:
   Max: 100
 Style/Documentation:

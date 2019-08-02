@@ -17,20 +17,20 @@ class Animal < ApplicationRecord
   validate :person_can_add_a_animal?, on: :create
 
   def can_have_swallow?
-    return unless swallow? && !person.adult?
+    return unless swallow? && !person&.adult?
 
-    errors.add(:kind, message: 'person-must-be-adult-to-have-a-swallow')
+    errors.add(:kind, 'person-must-be-adult-to-have-a-swallow')
   end
 
   def can_have_cat?
     return unless cat? && person.name[0].downcase == FORBIDDEN_CHAR
 
-    errors.add(:kind, message: 'person-who-has-name-starting-with-a-cant-have-a-cat')
+    errors.add(:kind, 'person-who-has-name-starting-with-a-cant-have-a-cat')
   end
 
   def person_can_add_a_animal?
-    return unless person.total_cost_month > LIMIT_PER_PERSON
+    return unless (person&.total_cost_month || 0) > LIMIT_PER_PERSON
 
-    errors.add(:month_cost, message: "person-cant-have-cost-more-than-#{LIMIT_PER_PERSON}")
+    errors.add(:month_cost, "person-cant-have-cost-more-than-#{LIMIT_PER_PERSON}")
   end
 end
