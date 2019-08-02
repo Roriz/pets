@@ -1,3 +1,6 @@
+# About
+see more in [instructions](/instructions.md)
+
 # Stack
 ```
 ruby: 2.6
@@ -18,5 +21,7 @@ docker-compose up
 docker exec -it pets_api_1 rake secret
 ```
 
-## About
-see more in [instructions](/instructions.md)
+## How run tests
+```shell
+docker exec -it pets_api_1 rspecs
+```
