@@ -26,7 +26,7 @@ class Animal < ApplicationRecord
   end
 
   def person_can_add_a_animal?
-    return unless person.total_cost_by_month > LIMIT_PER_PERSON
+    return unless person.total_cost_month > LIMIT_PER_PERSON
 
     errors.add(:month_cost, message: "person-cant-have-cost-more-than-#{LIMIT_PER_PERSON}")
   end

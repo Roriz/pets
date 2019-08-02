@@ -72,23 +72,48 @@ Inclua os trechos de código que respondem as perguntas abaixo:
 
 ### Qual é o custo médio dos animais do tipo cachorro?
 
-    SUA RESPOSTA AQUI
+```ruby
+Animal.dog.select('avg(month_cost) as month_cost')[0].month_cost
+```
 
 ### Quantos cachorros existem no sistema?
 
-    SUA RESPOSTA AQUI
+```ruby
+Animal.dog.count
+```
 
 ### Qual o nome dos donos dos cachorros (Array de nomes)
 
-    SUA RESPOSTA AQUI
+```ruby
+Animal.dog.joins(:person).pluck('people.name')
+```
 
 ### Retorne as pessoas ordenando pelo custo que elas tem com os animais (Maior para menor)
 
-    SUA RESPOSTA AQUI
+```ruby
+Person.all.joins(:animals).group(:id).order('sum(month_cost) desc')
+```
+or
+```ruby
+Class Animal
+  ...
+  counter_culture :person, column_name: 'month_cost', delta_column: 'total_month_cost'
+  ...
+end
+
+Person.all.order('total_month_cost desc')
+```
 
 ### Levando em consideração o custo mensal, qual será o custo de 3 meses de cada pessoa?
 
-    SUA RESPOSTA AQUI
+```ruby
+Person.all.joins(:animals).group(:id).select('people.*, sum(month_cost) * 3 as total_cost_quarter')
+```
+or
+
+```ruby
+Person.all.as_json(methods: :total_cost_quarter)
+```
 
 # Entrega do projeto
 
